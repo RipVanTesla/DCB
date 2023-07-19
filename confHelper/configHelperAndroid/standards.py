@@ -26,31 +26,31 @@ def click_by_id(driver, id, sleep=None, scrn=None):
     except NoSuchElementException:
         with allure.step("Элемент не найден на экране"):
             allure.attach(driver.get_screenshot_as_png(), name="screenshot", attachment_type=allure.attachment_type.PNG)
-            raise AssertionError("Элемент не найден на экране")
+            raise AssertionError("Элемент не найден на экране", id)
     except ElementNotVisibleException:
         with allure.step("Элемент невидим на экране"):
             allure.attach(driver.get_screenshot_as_png(), name="screenshot", attachment_type=allure.attachment_type.PNG)
-            raise AssertionError("Элемент невидим на экране")
+            raise AssertionError("Элемент невидим на экране", id)
     except ElementNotSelectableException:
         with allure.step("Элемент не может быть выбран"):
             allure.attach(driver.get_screenshot_as_png(), name="screenshot", attachment_type=allure.attachment_type.PNG)
-            raise AssertionError("Элемент не может быть выбран")
+            raise AssertionError("Элемент не может быть выбран", id)
     except TimeoutException:
         with allure.step("Превышено время ожидания"):
             allure.attach(driver.get_screenshot_as_png(), name="screenshot", attachment_type=allure.attachment_type.PNG)
-            raise AssertionError("Превышено время ожидания")
+            raise AssertionError("Превышено время ожидания", id)
     except StaleElementReferenceException:
         with allure.step("Ссылка на элемент устарела или стала недействительной"):
             allure.attach(driver.get_screenshot_as_png(), name="screenshot", attachment_type=allure.attachment_type.PNG)
-            raise AssertionError("Ссылка на элемент устарела или стала недействительной")
+            raise AssertionError("Ссылка на элемент устарела или стала недействительной", id)
     except ElementClickInterceptedException:
         with allure.step("Попытка клика на элемент прервана другим элементом"):
             allure.attach(driver.get_screenshot_as_png(), name="screenshot", attachment_type=allure.attachment_type.PNG)
-            raise AssertionError("Попытка клика на элемент прервана другим элементом")
+            raise AssertionError("Попытка клика на элемент прервана другим элементом", id)
     except ElementNotInteractableException:
         with allure.step("Элемент не доступен для взаимодействия"):
             allure.attach(driver.get_screenshot_as_png(), name="screenshot", attachment_type=allure.attachment_type.PNG)
-            raise AssertionError("Элемент не доступен для взаимодействия")
+            raise AssertionError("Элемент не доступен для взаимодействия", id)
 
     if sleep is True:
         time.sleep(5)
@@ -69,31 +69,31 @@ def send_keys_by_id(driver, id, text, sleep=None, scrn=None):
     except NoSuchElementException:
         with allure.step("Элемент не найден на экране"):
             allure.attach(driver.get_screenshot_as_png(), name="screenshot", attachment_type=allure.attachment_type.PNG)
-            raise AssertionError("Элемент не найден на экране")
+            raise AssertionError("Элемент не найден на экране", id)
     except ElementNotVisibleException:
         with allure.step("Элемент невидим на экране"):
             allure.attach(driver.get_screenshot_as_png(), name="screenshot", attachment_type=allure.attachment_type.PNG)
-            raise AssertionError("Элемент невидим на экране")
+            raise AssertionError("Элемент невидим на экране", id)
     except ElementNotSelectableException:
         with allure.step("Элемент не может быть выбран"):
             allure.attach(driver.get_screenshot_as_png(), name="screenshot", attachment_type=allure.attachment_type.PNG)
-            raise AssertionError("Элемент не может быть выбран")
+            raise AssertionError("Элемент не может быть выбран", id)
     except TimeoutException:
         with allure.step("Превышено время ожидания"):
             allure.attach(driver.get_screenshot_as_png(), name="screenshot", attachment_type=allure.attachment_type.PNG)
-            raise AssertionError("Превышено время ожидания")
+            raise AssertionError("Превышено время ожидания", id)
     except StaleElementReferenceException:
         with allure.step("Ссылка на элемент устарела или стала недействительной"):
             allure.attach(driver.get_screenshot_as_png(), name="screenshot", attachment_type=allure.attachment_type.PNG)
-            raise AssertionError("Ссылка на элемент устарела или стала недействительной")
+            raise AssertionError("Ссылка на элемент устарела или стала недействительной", id)
     except ElementClickInterceptedException:
         with allure.step("Попытка клика на элемент прервана другим элементом"):
             allure.attach(driver.get_screenshot_as_png(), name="screenshot", attachment_type=allure.attachment_type.PNG)
-            raise AssertionError("Попытка клика на элемент прервана другим элементом")
+            raise AssertionError("Попытка клика на элемент прервана другим элементом", id)
     except ElementNotInteractableException:
         with allure.step("Элемент не доступен для взаимодействия"):
             allure.attach(driver.get_screenshot_as_png(), name="screenshot", attachment_type=allure.attachment_type.PNG)
-            raise AssertionError("Элемент не доступен для взаимодействия")
+            raise AssertionError("Элемент не доступен для взаимодействия", id)
 
     if sleep is True:
         time.sleep(5)
@@ -112,31 +112,31 @@ def click_by_xpath(driver, path, sleep=None, scrn=None):
     except NoSuchElementException:
         with allure.step("Элемент не найден на экране"):
             allure.attach(driver.get_screenshot_as_png(), name="screenshot", attachment_type=allure.attachment_type.PNG)
-            raise AssertionError("Элемент не найден на экране")
+            raise AssertionError("Элемент не найден на экране", path)
     except ElementNotVisibleException:
         with allure.step("Элемент невидим на экране"):
             allure.attach(driver.get_screenshot_as_png(), name="screenshot", attachment_type=allure.attachment_type.PNG)
-            raise AssertionError("Элемент невидим на экране")
+            raise AssertionError("Элемент невидим на экране", path)
     except ElementNotSelectableException:
         with allure.step("Элемент не может быть выбран"):
             allure.attach(driver.get_screenshot_as_png(), name="screenshot", attachment_type=allure.attachment_type.PNG)
-            raise AssertionError("Элемент не может быть выбран")
+            raise AssertionError("Элемент не может быть выбран", path)
     except TimeoutException:
         with allure.step("Превышено время ожидания"):
             allure.attach(driver.get_screenshot_as_png(), name="screenshot", attachment_type=allure.attachment_type.PNG)
-            raise AssertionError("Превышено время ожидания")
+            raise AssertionError("Превышено время ожидания", path)
     except StaleElementReferenceException:
         with allure.step("Ссылка на элемент устарела или стала недействительной"):
             allure.attach(driver.get_screenshot_as_png(), name="screenshot", attachment_type=allure.attachment_type.PNG)
-            raise AssertionError("Ссылка на элемент устарела или стала недействительной")
+            raise AssertionError("Ссылка на элемент устарела или стала недействительной", path)
     except ElementClickInterceptedException:
         with allure.step("Попытка клика на элемент прервана другим элементом"):
             allure.attach(driver.get_screenshot_as_png(), name="screenshot", attachment_type=allure.attachment_type.PNG)
-            raise AssertionError("Попытка клика на элемент прервана другим элементом")
+            raise AssertionError("Попытка клика на элемент прервана другим элементом", path)
     except ElementNotInteractableException:
         with allure.step("Элемент не доступен для взаимодействия"):
             allure.attach(driver.get_screenshot_as_png(), name="screenshot", attachment_type=allure.attachment_type.PNG)
-            raise AssertionError("Элемент не доступен для взаимодействия")
+            raise AssertionError("Элемент не доступен для взаимодействия", path)
 
     if sleep is True:
         time.sleep(5)
@@ -145,41 +145,41 @@ def click_by_xpath(driver, path, sleep=None, scrn=None):
     driver.implicitly_wait(5)
 
 
-def send_keys_by_xpath(driver, id, text, sleep=None, scrn=None):
+def send_keys_by_xpath(driver, path, text, sleep=None, scrn=None):
     try:
         driver.implicitly_wait(5)
         # Попытка найти элемент по идентификатору
-        element = find_element_by_xpath(elements_path.get(id), driver)
+        element = find_element_by_xpath(elements_path.get(path), driver)
         # Делать что-то с элементом, если он найден
         element.send_keys(text)
     except NoSuchElementException:
         with allure.step("Элемент не найден на экране"):
             allure.attach(driver.get_screenshot_as_png(), name="screenshot", attachment_type=allure.attachment_type.PNG)
-            raise AssertionError("Элемент не найден на экране")
+            raise AssertionError("Элемент не найден на экране", path)
     except ElementNotVisibleException:
         with allure.step("Элемент невидим на экране"):
             allure.attach(driver.get_screenshot_as_png(), name="screenshot", attachment_type=allure.attachment_type.PNG)
-            raise AssertionError("Элемент невидим на экране")
+            raise AssertionError("Элемент невидим на экране", path)
     except ElementNotSelectableException:
         with allure.step("Элемент не может быть выбран"):
             allure.attach(driver.get_screenshot_as_png(), name="screenshot", attachment_type=allure.attachment_type.PNG)
-            raise AssertionError("Элемент не может быть выбран")
+            raise AssertionError("Элемент не может быть выбран", path)
     except TimeoutException:
         with allure.step("Превышено время ожидания"):
             allure.attach(driver.get_screenshot_as_png(), name="screenshot", attachment_type=allure.attachment_type.PNG)
-            raise AssertionError("Превышено время ожидания")
+            raise AssertionError("Превышено время ожидания", path)
     except StaleElementReferenceException:
         with allure.step("Ссылка на элемент устарела или стала недействительной"):
             allure.attach(driver.get_screenshot_as_png(), name="screenshot", attachment_type=allure.attachment_type.PNG)
-            raise AssertionError("Ссылка на элемент устарела или стала недействительной")
+            raise AssertionError("Ссылка на элемент устарела или стала недействительной", path)
     except ElementClickInterceptedException:
         with allure.step("Попытка клика на элемент прервана другим элементом"):
             allure.attach(driver.get_screenshot_as_png(), name="screenshot", attachment_type=allure.attachment_type.PNG)
-            raise AssertionError("Попытка клика на элемент прервана другим элементом")
+            raise AssertionError("Попытка клика на элемент прервана другим элементом", path)
     except ElementNotInteractableException:
         with allure.step("Элемент не доступен для взаимодействия"):
             allure.attach(driver.get_screenshot_as_png(), name="screenshot", attachment_type=allure.attachment_type.PNG)
-            raise AssertionError("Элемент не доступен для взаимодействия")
+            raise AssertionError("Элемент не доступен для взаимодействия", path)
 
     if sleep is True:
         time.sleep(5)

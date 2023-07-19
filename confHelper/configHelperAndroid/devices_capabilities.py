@@ -19,9 +19,9 @@ device = {
     2 : {
     'appPackage': appPackage,
     'platformName': platformName,
-    'platformVersion': '9.0',
-    'deviceName': 'Xiaomi Note 5',
-    'udid' : '585bc41f',
+    'platformVersion': '12.0',
+    'deviceName': 'POCO M3 Pro',
+    'udid' : 'eissm7cubuiv4tkf',
     'appActivity': appActivity,
     'autoGrantPermissions': 'true',
     'clearDeviceLogsOnStart': 'true',
